@@ -1,0 +1,44 @@
+data structures Feb 6 2024
+
+strings
+	sequence of characters
+	str1 + str2
+	str1 = 'hello'
+	str2 = 'world!'
+	
+input gives us a string
+
+index operator []
+0 is first index
+
+	example: fruit = 'banana'
+			letter = fruit[1]
+			print(letter)
+			>>>a
+
+error on indexing too far from string
+
+len() length of string
+		***normal length not related to index
+
+using a while statement and in interation variable and the len function we can construct a loop to LOOK AT EACH LETTER IN STRING
+
+ fruit ='banana'
+ index = 0
+ while index < len(fruit) :
+ 	letter = fruit[index]
+ 	print(index, letter)
+ 	index = index + 1
+
+use simplest form of code to code
+
+*** in *** important, for x in y
+
+string [0:X]
+example
+	s = 'Sandwich'
+	print(s[0:7])
+
+	also... [:2] /// [2:]
+
+

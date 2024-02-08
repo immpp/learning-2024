@@ -1,0 +1,48 @@
+LISTS feb 07 2024
+
+a list is a collection
+
+list constants, anything in sq brackets []
+
+separated by commas
+
+a list can be within a list
+
+[] indexing operator
+
+strings are "immutable" we cannot change contents of a string
+
+lists are "mutable" we can change an element of a list using the index operator
+
+len() return number of elements in the list
+
+range()
+	print(range(4))
+[0, 1, 2, 3] ***important
+
+List operations
+
+slicing lists
+
+t = [x, y, z]
+t[1:3]  <<<--- remember 0 is first
+y, z
+
+stuff = list()
+stuff.append('book')
+stuff.append('99')
+
+check list true/false
+	in // not in
+
+lists maintain order unless changed
+
+.sort()
+insert <<< not discussed but in literature
+
+.split()
+read a line break into pieces, then use a for loop to comb through
+
+split breaks on whitespace, extra spaces included
+change delimiter
+.split(';')

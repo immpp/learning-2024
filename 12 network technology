@@ -1,0 +1,82 @@
+12.1 network technology Feb 10 2024
+
+TCP transport control protocol
+built on top of IP, internet protocol
+Assumes IP might lose some data, stores and transmits data that seems to be lost
+
+handles flow control using transmit wondow
+
+provides a nice reliable "pipe"
+
+in computer networking, an internet socket or network socket is an endpoint of a bidirectional inter-process communication flow across an internet-protocol computer network, such as the internet
+
+a port is an application specific
+
+port 80 is the web port
+443 is https [secure]
+
+python haas built in socket tcp sockets
+
+import socket
+mysock = socket.socket(socket.AF_INET, socket.socket.SOCK_STREAM)
+mysock.connect( ('data.pr4e.org', 80) )
+
+mysock.connect( (host, port) )
+
+12.2 starts here ***
+
+Hypertext transfer protocol // HTTP
+
+application protocol
+	mail
+	world wide web
+
+there are rules that describe how we talk to them
+
+HTTP - hypertext transer protocol
+the dominant app layer protocol on the internet
+a set of rules that allows browser to retrieve web documents from servers over the internet
+
+what is a protocol
+	a set of rules
+
+url: uniform resource locator
+
+protocol /host /document
+https: www.p4e.com / blahblahblah
+
+request response cycle, browser to server and back
+
+rfc2616
+
+http server send, we receive , first order
+
+data.decode() ***next section
+
+12.x worked exercise
+
+import socket
+
+mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+mysock.connect(('data.pr4e.org', 80))
+cmd = 'GET http://data.pr4e.ord/romeo.txt HTTP/1.0\n\n'.encode()
+mysock.send(cmd)
+
+while True:
+	data = mysock.recv(512)
+	if (len(data) < 1):
+		break
+	print(data.decode())
+mysock.close()
+
+>>> \n\n end of line followed by a blank line
+
+utf8 protocol, encoded data, decode to bring back to unicode
+
+recv() receiving 512 characters
+
+***
+using the developer console to explore HTTP
+
+important to play with APIs
+

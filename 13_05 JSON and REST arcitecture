@@ -1,0 +1,47 @@
+JSON and REST arcitecture Feb 11 2024
+
+JSON - JavaScript Object Notation
+
+JSON represents datas as nested lists and dictionaries
+
+import json
+data = '''{
+	"name" : "Chuck",
+	"phone" : { 
+		"type" : "intl",
+		"number" : "+1 734 303 4456"
+	},
+	"email" : {
+		"hide" : "yes"
+	}
+}'''
+
+info = json.loads(data)
+print('Name:',info.["name"])
+print('Hide:',info["email"]["hide"])
+
+think of like a tree
+
+different in JSON, no start no end and no atrribute as well as no text area, different in nature to XML
+
+.loads(), load s, load from string
+
+what we get back is a python dictionary, as name and phone as key words,  can pull out the values
+
+dict within a dict
+
+[]list {}dict, JSON represents data as nested LISTS and DICTIONARIES
+
+info = json.loads(input)
+print('User count:', len(info))
+for item in info:
+	print('Name', item['name'])
+	print('Id', item['id'])
+	print('Attribute', item['x'])
+
+JSON is simpler, so the code to write it is simpler
+
+a list of dictionaries
+
+13.6 Service Oreiented Approach
+

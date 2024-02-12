@@ -1,0 +1,96 @@
+12.4 retrieving web pages
+
+using urllip in Python
+
+import urllib.request, urllib.parse, urllib.error
+
+fhand = urllib.request.urlopen('https://data.pr4e.org/romeo.txt')
+for line in fhand:
+	print(line.decode().strip())
+
+______
+
+import urllib.request, urllib.parse, urllib.error
+
+fhand = urllib.request.urlopen('https://data.pr4e.org/romeo.txt')
+
+counts = dict()
+for line in fhand:
+	words = line.decode().strip()
+	for word in words:
+		counts[words] = counts.get(word, 0) +1
+
+print(counts)
+
+_____
+
+12.5 Parsing web pages // web scraping
+
+what is web scraping?
+	when a program or script pretend to be abrowser and retrieves web pages, looks at them, extracts information, and then looks at more web pages
+	search engines scrape web pages, we this "spidering the web" or "web crawling"
+
+WHY scrape?
+	pull data, particularly social data, who links to who
+	get your own data back out of some system that has no "export capability"
+	monitor a site for new information
+	spider the web to make a database for a search engine
+
+Scraping web pages
+	there is controversy about web page scraping and some sites hate it
+	republishing copyrighted information is not allowed
+	violating terms of servcie is not allowed
+
+The easy way - beautiful soup
+
+12.5
+
+import urllib.request, urllin.parse, urllib.error
+from bs4 import Beautifulsoup
+
+url = input('Enter - ')
+html = urllib.request.urlopen(url).read()
+soup = BeautifulSoup(html, 'html.parser')
+
+# Retrieve all of the anchor tags
+tags = soup('a')
+for tag in tags:
+	print(tag.get('href', None))
+
+.read() - read it all, not a for loop, which is line by line
+
+beautifulsoup cleans up the data removes the html grossness
+
+will need to read some documentation to learn more avout parsing with BS
+
+https://www.dr-chuck.com/page1.htm
+
+Summary:
+TCP/IP gives us pipe/sockets between applications
+we designed application protocols to make use of the pipes
+hypertexr transsfer protocol[http] is a simple yet powerful protocol
+python has goos support for sockets, HTTP, and HTML parsing
+
+____
+
+worked example, beautiful soup
+
+import urllib.request, urllin.parse, urllib.error
+from bs4 import BeautifulSoup
+import ssl
+
+#Ignore SSL certification errors
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+
+url = input('Enter - ')
+html = urllib.request.urlopen(url, context=ctx).read()
+soup = BeautifulSoup(html, 'html.parser')
+
+# Retrieve all of the anchor tags
+tags = soup('a')
+for tag in tags:
+	print(tag.get('href', None))
+
+https://www.dr-chuck.com/page1.htm

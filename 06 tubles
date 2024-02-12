@@ -1,0 +1,90 @@
+tuples Feb 10 2024
+
+tubles are limited version of list
+that cant be modified
+
+a list with () instead of []
+
+max() looks through them
+
+cannot alter its contents
+
+tuple immutable
+
+store more densly then list
+
+cannot be sorted
+cannot be appended
+
+simpler and more memory efficient
+used when needed and then tossed away
+
+you can tuple to the left
+
+(x, y) = (4, 'fred')
+print(y)
+>>> fred
+
+the items() method in dict returns a list of (key, value) tuples
+
+for k,v in d.items():
+
+>< work with tubles if the first is equal python goes on to the next element, and so on
+(0, 1, 2) < (5, 1 ,2)
+>>> True           <<<--- true false returns
+
+we take advantage to sort tuples to sort a dict
+first we sort the dictionary by the key using items() method and sorted() function
+
+for k,v in sorted(d.items()):
+
+sort by key order, not value order
+
+if we construct a list of tuples of the form value, key we could sort by value
+we do this with a for loop
+
+c = {'a':10, 'b':1, 'c':22}
+tmp = list()
+for k,v in c.items():
+	tmp.append((v,k))
+
+print(tmp)
+>>>[(10, 'a'), (22, 'c'), (1, 'b')]
+
+tmp = sorted(tmp, reverse=True)
+print(tmp)
+>>>[(22, 'c'), (10, 'a'), (1, 'b')]
+
+this is data structures, shapes of data to help us sove a problem
+
+***flipping key, value in the program***
+
+fhand = open('remeo.txt')
+counts = dict()
+for line in fhand
+	words = line.split()
+	for word in words:
+		counts[word] = counts.get(word, 0) + 1
+
+lst = list()
+for key, val in counts.items():
+	newtup = (val, key)
+	lst.append(newtup)
+
+lst = sorted(lst, reverse=True)
+
+for val, key in lst[:10] ***equiv to 0-9 aka top 10
+	print(key, val)
+
+so we opened a file // split it line by line // made a dictionary for each word as a key and a value of the amount of times each word has been noted // then we made a list from the dict that flips the keys and value // then sort the list // then for the top 10 values we print the reverse to see the top 10 most common words in the file
+
+list comprehension creates a dynamic list
+instead of appends, constants, commas
+
+c = {'a':10, 'b':1, 'c':22}
+
+print(sorted( [ (v,k) for k,v in c.items() ]))
+	computing a list on the fly to sort right into the sorted and print
+
+go and read on some list comprehension
+

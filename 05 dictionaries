@@ -1,0 +1,123 @@
+DICTIONARIES Feb 08 2024
+
+what is "not a collection?"
+
+list is an ordered collections
+
+dictionary = a bag of values each with its own 'label'
+
+'associative array'
+	data structure
+
+pythons most powerful collection
+hash maps/java ...
+
+memory based ***key value stores
+
+purse = dict()
+purse['money'] = 12
+purse['candy'] = 3
+purse['tissues'] = 75
+print(purse)
+{...}
+
+dont always come out in the same order as entered
+unsorted 'bag' of values
+
+print(purse['candy'])
+3
+
+immutable = can be changed
+
+print... "" + 3
+
+lists have positions, dictionaries have 'labels'
+
+{} dictionary
+
+ccc = dict()
+ccc['csev'] = 1
+ccc['csev'] = ccc['csev'] + 1
+
+histogram
+
+error for key which is not in dictionary
+keys are names in dictionaries
+
+if statement, conditional execution
+
+for name in names:
+	if name not in counts:
+		counts[name] = 1
+	else:
+		counts[name] = counts[name] + 1
+
+.get(name, 0)  key, 
+	doesnt traceback, works if not in dict [list of keys]
+
+histogram trick^^^
+
+counts = dict()
+names = ['csev', 'cwen', 'csev', 'zqian', 'cwen']
+for name in names:
+	counts[name] = counts.get(name, 0) + 1   <== 0 in get is default
+print(counts)
+
+combine everything together***
+
+>>>
+
+counts = dict()
+print('Enter a line of text:')
+line = input ('')
+
+words = line.split()
+
+print('Words:', words)
+
+print('Counting...')
+for word in words:
+	counts[words] = counts.get(word, 0) + 1
+print('Counts', counts)
+
+>>>
+
+***the general pattern to count the words in a line of text is to SPLIT the line into words, then loops through and use a dict to track the count independantly
+
+***.get() *** only for dictionaries
+
+.keys() gives you the keys
+
+.values()
+	not in order to how you put them in
+	but relates to the order of the keys
+
+.items()
+
+tuple.... coming in next chapter
+
+for word,count in counts.items()
+>>> what the fuck is that comma doing
+		for #both#
+
+bigcount = None
+
+>>>
+
+name = input('Enter file:')
+handle = open(name)
+
+counts = dict()
+for line in handle:
+	words = line.split()
+	for word in words:
+		counts[word] = counts.get(word, 0) + 1
+
+bigcount = None
+bigword = None
+for word,count in counts.items():
+	if bigcount is None or count > bigcount:
+		bigword = word
+		bigcount = count
+
+print(bigword, bigcount)

@@ -1,0 +1,100 @@
+13.1 Data on the web Feb 11, 2024
+
+wire protocol - what we sendon the "wire"
+sending data across the net - python dictionary -> java hashmap
+
+agreeing on a wire format - XML
+serialize -> de-serialize
+
+serialization
+
+XML - eXtensible markup language
+
+xml elements or nodes
+simple element // complex element
+
+primary purpose is to help information systems share structured data
+start tag / end tag / text content / attribute / self closing tag
+
+<person>
+	<name>Chuck</name>
+	<phone type="intl">
+		+1 734 303 4456
+	</phone>
+	<email hide="yes"/>
+</person>
+
+whitespace - line ends do not matter
+white space gernally is discarded on text elements
+
+always one big starter tag/outside tag
+html is like xml but more specified
+
+xml terminology
+tags - indicate the beginning and end of elements
+attributes - keywords/value pairs on the opening tag of XML
+serialize / de-serialize - convern data in one program into a common format that can be stored and/or ttransmitted between systems in a programming language-independant manner
+
+XML as a tree, nodes
+
+element / text / attributes
+
+XML as paths, for parsing
+	draw the tree and walk down the tree
+
+/a/b
+/a/c/d
+/a/c/e
+
+XML Schema
+
+description of the legal format of an XML document
+expressed in terms of contraints on the structure and the content of documents
+often used to specify a contract between systems - "my system will only accept XML that conforms to this particular Schema"
+in a particular peice of XML meets the specification of the Schema - it is said to 'validate'
+
+xml validation is the act of sending the document to the validator
+
+XML Schema from W3C - XSD
+	main focus
+
+it is common to represent time in UTC/GMT given that servers are often scattered around the world
+year 4 dig, month 2 dig, day 2 dig
+2024-02-11
+
+UTC coordinated universal time
+
+Parsing XML___
+
+import xml.etree.ElementTree as ET
+data = '''<person>
+	<name>Chuck</name>
+	<phone type="intl">
+		+1 734 303 4456
+	</phone>
+	<email hide="yes"/>
+</person>'''
+
+tree = ET.fromstring(data)
+print('Name:',tree.find('name').text)
+print('Attr:',tree.find('email').get('hide'))
+
+____
+
+triple quoted string, ''' zzz ''' multiline string
+
+fromstring() take this string and give us back a nice tree of data within the internal memory
+
+stuff = ET.fromstring(input)
+lst = stuff.findall('users/user')
+print('User count:', len(lst))
+for item in lst:
+	print('Name', item.find('name').text)
+	print('Id', item.find('id').text)
+	print('Attribute', item.get("x"))
+
+stuff is a tree of information that gives us methods to parse through the data
+making trees within trees to parse the data
+
+xml to talk to web services
+

@@ -1,0 +1,76 @@
+unicode and strings Feb 10 2024
+
+12.3
+
+representing simple strings
+	each char is represented by a # between 0 and 256 stored in 8 bits of memory
+	we refer to 8 bits of memory as a byte of memory
+	the ord() function tells us the numeric value of a simple ASCII character
+
+eg {case sensitive}
+>>>print(ord('H'))
+72
+
+unicode is universal code
+
+UTF-8 is everything, now the best
+
+in pthon3 all strings are unicode
+
+Python strings to bytes
+	when we talk to an external resource like a network socket, we send bytes, so we need to encode python3 strings into a given character encoding
+	when we need to read data from an external resource, we must decode it, based on the character set so it is properly represented in python3 as a string
+	encode() // decode()
+
+by default assumes utf-8... decode(utf-8)
+almost never have to tell it what it is
+
+decode goes from bytes to unicode
+
+encode, turning to bytes, sending in utf-8
+
+sounds more complex than it is
+
+12.4 retrieving web pages
+
+using urllip in Python
+
+import urllib.request, urllib.parse, urllib.error
+
+fhand = urllib.request.urlopen('https://data.pr4e.org/romeo.txt')
+for line in fhand:
+	print(line.decode().strip())
+
+______
+
+import urllib.request, urllib.parse, urllib.error
+
+fhand = urllib.request.urlopen('https://data.pr4e.org/romeo.txt')
+
+counts = dict()
+for line in fhand:
+	words = line.decode().strip()
+	for word in words:
+		counts[words] = counts.get(word, 0) +1
+
+print(counts)
+
+_____
+
+12.5 Parsing web pages // web scraping
+
+what is web scraping?
+	when a program or script pretend to be abrowser and retrieves web pages, looks at them, extracts information, and then looks at more web pages
+	search engines scrape web pages, we this "spidering the web" or "web crawling"
+
+WHY scrape?
+	pull data, particularly social data, who links to who
+	get your own data back out of some system that has no "export capability"
+	monitor a site for new information
+	spider the web to make a database for a search engine
+
+Scraping web pages
+	there is controversy about web page scraping and some sites hate it
+	republishing copyrighted information is not allowed
+	violating terms of servcie is not allowed
+

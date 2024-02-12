@@ -1,0 +1,55 @@
+Regular expressions Feb 10 2024
+
+regex
+
+concise and fleible means for matching strings of text
+
+wild card for matching and parsing data
+
+import re
+importing the regular expression module
+
+library name dot function
+re.search('^From: ', line)    ****^ true if from is beginning of line
+
+^X.*:  lines that have cap x @ beginning followed by any number of characters and ends in a colon
+
+X and : are characters in this instance
+
+^ match the start of the line // case sensitive
+. match any character
+* many times [as many as there is]
+
+^X-\S+:
+find X-, followed by any non-whitespace char [\S], one or more times [+], end on a :
+
+___
+
+re.search() returns true/false
+
+re.findall() finds matching strikes
+
+[0-9]+ [] is one or more digits
+
+x = string
+y = re.findall('[0-9]+', x)
+'[AEIOU]+'
+
+greedy matching, the repeat characters (* and +) push outward in both directions to match the largest string possible
+
+non-greedy matching, add a ? character to the + or *
+
+^F.+?:
+
+y = re.findall('\S+@\S+', x)
+y = re.findall('^From (\S+@\S+)', x)
+
+the () within the findall is what is going to be extracted
+
+'@(^[ ]*)' <<< [^ ] match non-blank character
+
+From .*@([^ ]*)
+
+escape character, if you want a special character to just behave normally you prefix with '\'
+'\$[0-9.]+'  <<< the dollar sign would be able to be searched for now as without it is a special character in regex... eg bracket
+

@@ -25,3 +25,50 @@ CREATE TABLE Genre (
 Feb 20 2024
 
 okay to have replication as long as it is numbers that point to the data
+
+15_07 reconstructing data with join
+Feb 20 2024
+
+relational power
+
+by removing the replicated data and replacing it with references to a single copy of each bit of data we build a "web" of information that the relational database can read through very quickly, even for large amounts of data
+
+often when you want some data it comes from a number of tables linked by these foreign keys
+
+SQL getting weird:
+
+SELECT Album.title, Artist.name FROM Album JOIN Artist ON Album.artist_id = Artist.id
+
+ON clause vs WHERE clause
+
+SELECT Album.title, Album.artist_id, Artist.id, Artist.name FROM Album JOIN Artist ON Album.artist_id = Artist.id
+
+JOIN is glueing these tables together
+
+SELECT Track.title, Genre.name FROM Track JOIN Genre ON Track.genre_id = Genre.id
+
+SELECT Track.title, Genre.name >>> what we want to see
+FROM Track JOIN Genre 		   >>> the tables that have the data
+ON Track.genre_id = Genre.id   >>> how the tables are linked
+
+without ON clause it combines all relevent combinations
+
+indenting doesnt matter in SQL
+
+complexity continues
+
+SELECT Track.title, Artist.name, Album.title, Genre.name FROM Track JOIN Genre JOIN Album JOIN Artist ON Track.genre_id = Genre.id AND Track.album_id = Album.id AND Album.artist_id = Artist.id
+
+SELECT Track.title, Artist.name, Album.title, Genre.name 
+>>>> what we want to see
+
+FROM Track JOIN Genre JOIN Album JOIN Artist 
+>>>>> the table that holds the data
+
+ON Track.genre_id = Genre.id AND Track.album_id = Album.id AND Album.artist_id = Artist.id
+>>>> how the tables are linked
+
+***reconstruct the replication // dont store it
+
+carefully construct a data model that makes sense
+

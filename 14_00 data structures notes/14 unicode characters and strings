@@ -1,0 +1,36 @@
+Feb 19 2024
+Database with PYTHON
+
+SQL - structured query langange
+	essential in a lot of jobs
+
+Network Programs
+Unicode Characters and Strings
+
+mapping of letters and numbers - ASCII
+
+American standard code for information interchange
+
+represented simple strings
+each character represented by a number between 0 and 256
+8 bits of memory is a byte
+the ord() function tells is the numeric value of a simple ascii character
+
+one byte is one character
+
+Unicode, universal code for different code "charts"
+allows different langs to be able to communicate in programming
+
+multi-byte characters - UTF-8 is the best practice for moving data between systems, best practice moving files or moving data
+
+py3 all strings are internally unicode
+encode/decode
+
+when we need to ready external data we need to decode it... mystring = data.decode()
+
+decode goes from bytes to unicode
+
+unicide transformation format
+
+talking to a socket, encode to send and recode on receive
+

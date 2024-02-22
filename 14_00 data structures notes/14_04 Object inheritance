@@ -1,0 +1,68 @@
+14_04 Object inheritance Feb 19 2024
+
+apparantly i am not going to understand this at this time...
+
+a form of store and reuse
+	prevents pasting over and over
+
+inheritance:
+when we make a new class - we cna reuse existing class and inherit all the capabilities of an existing class and then add our own little bit to make our new class
+another form of store and reuse
+write once - resuse many times
+the new class (child) has all the capabilities of the old class (parent) - and then add some more
+
+another word of this is 'subclasses' 
+
+____
+
+class PartyAnimal:
+	
+	def __init__(self, name):
+		self.x = 0
+		self.name = nam
+		print(self.name,"constructed")
+
+	def party(self):
+		self.x = self.x + 1
+		print(self.name,"party count",self.x)
+
+class FootballFan(PartyAnimal):
+
+	def __init__(self, nam):
+		super().__init__(nam)
+		self.points = 0
+
+	def touchdown(self):
+		self.points = self.points + 7
+		self.party()
+		print(self.name,"points",self.points)
+
+##FootballFan is a class which extends PartyAnimal. It has all the capabilities of PartyAnimal and more
+
+s = PartyAnimal("Sally")
+s.party()
+
+j = FootballFan("Jim")
+j.party()
+j.touchdown()
+
+##class FootballFan(PartyAnimal): ***extended class PA to FF, after FF we have added to the class PA
+##super() before i do the stuff in FF lets do all the items in PA initializes the partyanimal, super class and sub class
+##syntax varies by lang, python not the most intuitive
+
+FF is derived class
+
+Definitions summary
+
+Class - a template [it is the cookie cutter]
+Attribute - a variable within a class
+Method - A function within a class
+Object - a particular instance of a class
+Contructor - code that runs when an object is created
+Inheritiance - the ability to extend a class to make a new class
+
+we talking djange now... 
+
+object oreiented programming is avery structured approach to code reuse
+we can group data and functionality together and create many independant instances of a class
+

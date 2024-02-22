@@ -1,0 +1,27 @@
+15_05 Representing a data model in tables
+Feb 20 2024
+
+logical model into a physical model
+
+take each table and the relationship of the table and augment them
+
+primary key - way to identify each unique row
+
+table > primary key > logical key > foreign key
+
+create a naming convention
+
+primary key starting point
+foreign key ending point
+
+logical key, unique thing we might use to look up data
+
+CREATE TABLE Genre (
+	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	name TEXT
+	)
+
+15_06 inserting relational data
+Feb 20 2024
+
+okay to have replication as long as it is numbers that point to the data

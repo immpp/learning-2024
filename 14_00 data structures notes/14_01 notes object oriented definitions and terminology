@@ -1,0 +1,46 @@
+14.1 Object oriented definitions and terminology
+
+not everything, just definitions and mechanics
+more about how it works and less about how you use it
+wont get entire picture until this is all looked at in the context of a real problem
+
+input >>> process >>> output
+
+object oriented
+	a program is mande up of many cooperating objects
+	instead of being the whole program - each objey is a little island within the program and cooperatively working with other objects
+	a program is made up of one or more objects working together
+
+OBJECT - an object is a bit of self-contained code and data
+a key aspect of the object approach is to break the problem into smaller understandable parts
+objects have boundarues that allow us to ignore the un-needed detaul
+we have been usung objects all along... string objects, integers objects, dicitonary objects, list objects
+
+objects cab get created and used
+
+we are orchestrating objects
+
+objects hide detaul - they allow the "rest of the program" to ignore the detail about "us"
+
+definitions:
+
+class - a template [actual code of how an object will behave but not the object itself]
+Method or Message - A defined capability of a class
+Field or Attribute - A bit of data in a class
+Object or Instance - A particular instance of a class
+
+terminology: CLASS
+defines the abstract characteristics of a thing (object) including the things characteristics (its attributes, fields or properties) and the things behavior (the things it can do, or methods, operations or features) Oned may say that a class is a blueprint or factory that describes the nature of something. for ex, the class DOG would consist of traits shared by all dogs, such as breeed and color (characteristics), and the ability to bark and sit (behaviors)
+
+terminology: INSTANCE
+once can have an instance of a class or a particular object, the instance is the actual object created at runtime. in programmers jargon, the LAssie object is an instance of the dog class. the set of values of the attributes of a particular class is called its STATE. the object consists of state and the behavior thats defined in the objects class
+
+OBJECT and INSTANCE are often used interchangeably
+
+termionology: METHOD
+an onjects abilities in language, methods are verbs. LAssies being a DOG has the ability to bark, so bark() is one of lassies methods. she may have other methods as well, for example sit() or eat() or walk()... within the program using a method usually affects only one particular objeect; all dogs can bark, but you need only one particular dog to do the barking
+
+METHOD and MESSAGE are often used....
+
+pass an instance into dir()
+shows you documentation for each class, str/int/dict()/list()

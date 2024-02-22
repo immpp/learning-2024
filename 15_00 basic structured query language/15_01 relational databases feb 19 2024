@@ -1,0 +1,30 @@
+15_01 relational databases feb 19 2024
+
+install database browser
+	SQLite, chrome plugin available
+
+Relational Databases
+storing rows and columns in tables
+
+applying cleverness to how we access data
+
+database - contains many tables
+relation (or table) - contains tuples and attributes
+tuple (or row) - a set of fields that generally represent an object like a person or music track
+attribute (also column or field) - one of possibly many elements of data corresponding to the object represented by the row
+
+strong rules about the content
+
+SQL
+structured queryt language is the language we use to issue command to the database
+	create a table
+	retrieve some data
+	insert data
+	delete data
+
+python + sql
+
+python good with unstructured data
+
+CRUD - create read update delete
+

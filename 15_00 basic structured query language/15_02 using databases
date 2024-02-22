@@ -1,0 +1,33 @@
+15_02 using databases feb 19 2024
+
+large project - website
+
+two roles in large projects
+
+application developer - 
+
+database administrator - responsible for desing/maint/ or databse
+
+python - input breakdown and store then pull and spit out
+
+apd and dba
+
+SQLite browser
+
+Database model - a database model or database schema is the structure or format of a database, desreibed in a formal lang supported by the database management syysten in otherwords a database model is the application of a data model when used in conjunction with a database management system
+
+common databse systems:
+	oracle [ large commercial enterptrise software ]
+	mysql - open source
+	sqlserver [from microsoft]
+	many smaller projects, free and open source
+		HSQL, SQLite, Postgress...
+
+SQLite - embedded database
+
+designed to be built into the application
+
+already in python, fast and aimed at smaller amounts of data
+
+import statement
+

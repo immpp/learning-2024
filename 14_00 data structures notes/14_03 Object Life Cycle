@@ -1,0 +1,53 @@
+14_03 Object Life Cycle FEB 19 2024
+
+Object lifecycle
+
+objectsd are created, used and discarded
+we have special blocks of code (methods) that get called
+	at the moment of creation (constructor)
+	at the moment of destruction (destructor)
+constructors are used a lot
+destructors are seldom used
+
+Constructor
+primary purpose of the constructor is to set up some instance variables th have the proper initial values when the object is created
+
+def __init__(self):
+	constructed
+
+def __del__(self):
+	destructed
+
+gotta get that damn memory back
+
+the con and des are optional
+
+many instances
+	we create lots of objects - the class is the template for the object
+	we can store each object in its own distinct variable
+	we call this having multiple instances of the same class
+	each instance has its own copy of the instance variable
+
+____
+
+class PartyAnimal
+def __init__(self, z):
+	self.x = 0
+	self.name = z
+	print(self.name,"constructed")
+
+def party(self):
+	self.x = self.x + 1
+	print(self.name,"party count",self.x)
+
+s = PartyAnimal("Sally")
+s.party()
+j = PartyAnimal("Jim")
+
+j.party()
+s.party()
+
+____
+
+constructors can have additional parameters, these can be used to set up instanced variables for the particular instance of the class (ex for the particular object)
+

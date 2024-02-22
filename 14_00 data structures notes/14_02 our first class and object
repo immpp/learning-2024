@@ -1,0 +1,48 @@
+14_02 our first class and object FEB 19 2024
+
+class is a reserved work that defines a template for making objects
+
+____
+
+class PartyAnimal:
+
+	def __init__(self):
+		self.x = 0
+
+	##this is the method
+
+	def party(self):
+		self.x = self.x + 1
+		print("So far",self.x)
+
+an = PartyAnimal()
+
+an.party()
+an.party()
+an.party()
+
+____
+
+## tell the an object to run the party()code within it
+
+## clunkier but the same as an.party()
+
+PartyAnimal.party(an)
+
+init = initialize
+
+dir() lists capabilities
+ones with __ = ignore used by pthon itself
+the rest al real operations that can be called
+
+____
+
+added to bottom of partyanimal...
+
+print("Type", type(an))
+print("Dir ", dir(an))
+print("Type", type(an.x))
+print("Type", type(an.party))
+
+____
+
